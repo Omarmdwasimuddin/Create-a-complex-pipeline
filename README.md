@@ -40,4 +40,25 @@ git push -u origin main
 ---
 
 
+#### .gitlab-ci.yml [projecct root e banaw]
+```bash
+test-job:
+  tags:
+    - docker
+  script:
+    - echo "This is my first job!"
+    - date
+```
+---
+
+#### terminal e daw
+```bash
+git add .gitlab-ci.yml
+git commit -m "Add initial CI/CD pipeline config"
+git push origin main
+```
+---
+
+
+
 
