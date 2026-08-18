@@ -106,17 +106,3 @@ git push origin main
 <img width="1283" height="497" alt="Pipeline id view" src="https://github.com/user-attachments/assets/6d4af51c-f9bc-4b38-bb54-38960515f93f" />
 
 ---
-
-## সংক্ষেপে Flow
-
-```
-Docusaurus site তৈরি ও ফোল্ডার ঠিক করা
-        ↓
-GitLab-এ project তৈরি করা
-        ↓
-Code push করা
-        ↓
-.gitlab-ci.yml তৈরি ও push করা
-        ↓
-Pipeline verify করা
-```
