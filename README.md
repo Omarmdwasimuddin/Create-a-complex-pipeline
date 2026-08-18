@@ -6,7 +6,11 @@
 > - তোমার মেশিনে Node.js ইনস্টল থাকা লাগবে
 ```bash
 mkdir pipeline-tutorial
+```
+```bash
 cd pipeline-tutorial
+```
+```bash
 npm init docusaurus
 ```
 ---
