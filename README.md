@@ -1,33 +1,59 @@
-# Create a complex pipeline
+# Create a complex pipeline (Docusaurus Project দিয়ে)
 
+## ধাপ ১: Docusaurus Project তৈরি করা
 
-#### Docusaurus প্রজেক্ট তৈরি করা
-> Pre-requirement
-> - তোমার মেশিনে Node.js ইনস্টল থাকা লাগবে
+### পূর্বশর্ত (Pre-requirement)
+
+- মেশিনে Node.js ইনস্টল থাকতে হবে
+
+### Project তৈরির Command
+
 ```bash
 mkdir pipeline-tutorial
 ```
+
 ```bash
 cd pipeline-tutorial
 ```
+
 ```bash
 npm init docusaurus
 ```
-> Note: এটা একটা উইজার্ড চালাবে, সব ডিফল্ট অপশন সিলেক্ট করে যাও (Enter চাপতে থাকো)।
----
-> উইজার্ড website/ নামে একটা ফোল্ডারে সাইট বানাবে, কিন্তু আমাদের রুটে চাই:
+
+> **Note:** এটা একটা wizard চালাবে, সব default option সিলেক্ট করে যেতে হবে (Enter চাপতে থাকো)।
+
+### ফোল্ডার Structure ঠিক করা
+
+Wizard `website/` নামে একটা ফোল্ডারে সাইট বানাবে, কিন্তু root-এ চাই। তাই:
+
 ```bash
 mv website/* .
 ```
+
 ```bash
 rm -r website
 ```
+
 ---
 
+## ধাপ ২: GitLab-এ নতুন Project তৈরি করা
 
-#### GitLab e project banate hobe ---> http://localhost:8000/dashboard/projects ---> click: New project ---> click: Create blank project ---> Project name: My Pipeline Tutorial Project ---> Project URL, Visibility Level e value set koro and Initialize repository with a README unsign koro ---> click: Create project 
+নিচের ধাপগুলো অনুসরণ করতে হবে:
 
-#### project push koro
+1. Visit করুন: `http://localhost:8000/dashboard/projects`
+2. **New project** এ ক্লিক করুন
+3. **Create blank project** এ ক্লিক করুন
+4. Project name দিন: `My Pipeline Tutorial Project`
+5. Project URL এবং Visibility Level এ value সেট করুন
+6. **Initialize repository with a README** — এই অপশনটি unselect (uncheck) করুন
+7. **Create project** এ ক্লিক করুন
+
+---
+
+## ধাপ ৩: Project Push করা
+
+Terminal-এ নিচের command গুলো চালাতে হবে:
+
 ```bash
 git init
 git remote add origin http://localhost:8000/<your-group>/my-pipeline-tutorial-project.git
@@ -36,12 +62,17 @@ git commit -m "Add simple generated Docusaurus site"
 git branch -M main
 git push -u origin main
 ```
-> Note: browser e reload koro ba represh koro http://localhost:8000/wasuit-group/my-pipeline-tutorial-project#  ---> code push hoye jabe
+
+> **Note:** পুশ করার পর browser-এ project page টি reload/refresh করলে code push হয়ে যাওয়া দেখা যাবে —
+> `http://localhost:8000/wasuit-group/my-pipeline-tutorial-project`
+
 ---
 
+## ধাপ ৪: `.gitlab-ci.yml` ফাইল তৈরি করা
 
-#### .gitlab-ci.yml [projecct root e banaw]
-```bash
+Project root-এ `.gitlab-ci.yml` ফাইল বানিয়ে নিচের code দিতে হবে:
+
+```yaml
 test-job:
   tags:
     - docker
@@ -49,17 +80,43 @@ test-job:
     - echo "This is my first job!"
     - date
 ```
+
 ---
 
-#### terminal e daw
+## ধাপ ৫: CI/CD Config Push করা
+
+Terminal-এ নিচের command গুলো চালাতে হবে:
+
 ```bash
 git add .gitlab-ci.yml
 git commit -m "Add initial CI/CD pipeline config"
 git push origin main
 ```
----
-
-#### click: Build ---> click: pipelines ---> click: id
-<img width="1283" height="497" alt="image" src="https://github.com/user-attachments/assets/6d4af51c-f9bc-4b38-bb54-38960515f93f" />
 
 ---
+
+## ধাপ ৬: Pipeline Verify করা
+
+নিচের ধাপ অনুসরণ করে pipeline চেক করতে হবে:
+
+1. **Build** এ ক্লিক করুন
+2. **Pipelines** এ ক্লিক করুন
+3. Pipeline-এর **id** তে ক্লিক করুন
+
+<img width="1283" height="497" alt="Pipeline id view" src="https://github.com/user-attachments/assets/6d4af51c-f9bc-4b38-bb54-38960515f93f" />
+
+---
+
+## সংক্ষেপে Flow
+
+```
+Docusaurus site তৈরি ও ফোল্ডার ঠিক করা
+        ↓
+GitLab-এ project তৈরি করা
+        ↓
+Code push করা
+        ↓
+.gitlab-ci.yml তৈরি ও push করা
+        ↓
+Pipeline verify করা
+```
