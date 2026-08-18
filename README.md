@@ -59,6 +59,7 @@ git push origin main
 ```
 ---
 
+#### click: Build ---> click: pipelines ---> click: id
+<img width="1283" height="497" alt="image" src="https://github.com/user-attachments/assets/6d4af51c-f9bc-4b38-bb54-38960515f93f" />
 
-
-
+---
