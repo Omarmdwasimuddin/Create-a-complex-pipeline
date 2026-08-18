@@ -36,6 +36,7 @@ git commit -m "Add simple generated Docusaurus site"
 git branch -M main
 git push -u origin main
 ```
+> Note: browser e reload koro ba represh koro http://localhost:8000/wasuit-group/my-pipeline-tutorial-project#  ---> code push hoye jabe
 ---
 
 
