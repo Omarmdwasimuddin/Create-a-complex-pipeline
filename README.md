@@ -14,6 +14,7 @@ cd pipeline-tutorial
 npm init docusaurus
 ```
 > Note: এটা একটা উইজার্ড চালাবে, সব ডিফল্ট অপশন সিলেক্ট করে যাও (Enter চাপতে থাকো)।
+---
 > উইজার্ড website/ নামে একটা ফোল্ডারে সাইট বানাবে, কিন্তু আমাদের রুটে চাই:
 ```bash
 mv website/* .
