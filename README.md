@@ -33,6 +33,7 @@ git init
 git remote add origin http://localhost:8000/<your-group>/my-pipeline-tutorial-project.git
 git add .
 git commit -m "Add simple generated Docusaurus site"
+git branch -M main
 git push -u origin main
 ```
 ---
