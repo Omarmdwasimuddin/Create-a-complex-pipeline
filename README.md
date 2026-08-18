@@ -13,4 +13,5 @@ cd pipeline-tutorial
 ```bash
 npm init docusaurus
 ```
+> Note: এটা একটা উইজার্ড চালাবে, সব ডিফল্ট অপশন সিলেক্ট করে যাও (Enter চাপতে থাকো)।
 ---
