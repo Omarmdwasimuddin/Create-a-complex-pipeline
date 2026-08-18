@@ -25,7 +25,7 @@ rm -r website
 ---
 
 
-####
+#### GitLab e project banate hobe ---> http://localhost:8000/dashboard/projects ---> click: New project ---> click: Create blank project ---> Project name: My Pipeline Tutorial Project ---> Project URL, Visibility Level e value set koro and Initialize repository with a README unsign koro ---> click: Create project 
 ```bash
 
 ```
