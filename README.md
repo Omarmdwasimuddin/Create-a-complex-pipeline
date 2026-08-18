@@ -26,8 +26,14 @@ rm -r website
 
 
 #### GitLab e project banate hobe ---> http://localhost:8000/dashboard/projects ---> click: New project ---> click: Create blank project ---> Project name: My Pipeline Tutorial Project ---> Project URL, Visibility Level e value set koro and Initialize repository with a README unsign koro ---> click: Create project 
-```bash
 
+#### project push koro
+```bash
+git init
+git remote add origin http://localhost:8000/<your-group>/my-pipeline-tutorial-project.git
+git add .
+git commit -m "Add simple generated Docusaurus site"
+git push -u origin main
 ```
 ---
 
